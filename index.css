@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'digital-7_italicitalic';
+    src: url('fonts/digital-7.italic-webfont.woff2') format('woff2'),
+         url('fonts/digital-7.italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*font-family: 'digital-7_italicitalic';*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+/*font-family: 'Poppins', sans-serif;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+/*font-family: 'Racing Sans One', cursive;*/
+
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.5%;
+    width: 50%;
+    height: 50%;
+}
+
+#screen {
+    background-image: linear-gradient(rgb(89, 105, 65), rgb(83, 127, 83));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 90%;
+    height: 100%;
+    font-family: 'digital-7_italicitalic';
+    font-size: 1400%;
+}
+
+.subtext {
+    font-family: 'Poppins', sans-serif;
+    font-size: 400%;
+}
+
+.subsubtext {
+    font-family: 'Poppins', sans-serif;
+    font-size: 200%;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1100%;
+    text-decoration: none;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}
+
+button {
+    background-color: gray;
+}
+
+#miles {
+    font-family: 'Racing Sans One', cursive;
+    font-size: 1000%;
+}
