@@ -17,6 +17,23 @@
 }
 /*font-family: 'digital-7_italicitalic';*/
 
+/*Dimensions*/
+@media screen and (max-width: 1100px) {
+    #cost {
+        font-size: 17vw;
+    }
+
+    #fuel {
+        font-size: 17vw;
+    }
+
+    #dollar-sign {
+        font-size: 17vw;
+        margin-top: 50px;
+        position: relative;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -27,9 +44,38 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.jc-center {
+    display: flex;
+    justify-content: center;
+}
+
+.ai-center {
+    display: flex;
+    align-items: center;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 100%;
 }
 
 #container {
@@ -38,7 +84,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     gap: 2.5%;
-    width: 50%;
+    width: 90%;
     height: 50%;
 }
 
@@ -80,12 +126,22 @@ h1 {
 button {
     background-color: gray;
     color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 #miles {
     font-family: 'Barlow', sans-serif;
     font-size: 100px;
     font-weight: 500;
+}
+
+#tank-main-container {
+    width: 90%;
+    height: 50px;
 }
 
 #tank-container {
@@ -99,12 +155,13 @@ button {
     position: relative;
     z-index: 1;
     border: 1px black solid;
+    transition: background-color 1s ease;
 }
 
 #tank-visual {
     top: 1px;
     left: 1px;
-    height: calc(100% - 1px);
+    height: calc(100% - 2px);
     position: absolute;
     z-index: 2;
     transition: background-color 2s ease;
@@ -115,6 +172,8 @@ button {
     background-color: black;
     position: relative;
     z-index: 3;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
 }
 
 #tank-value {
@@ -128,4 +187,203 @@ button {
     font-size: 15px;
     font-weight: 500;
     text-align: center;
+}
+
+#tank-alert {
+    color: white;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0%;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+#fuel-selectors {
+    width: 200px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 5px;
+}
+
+.fuel-selector {
+    border-radius: 25px;
+    width: 95%;
+    height: 17%;
+    background-color: rgb(197, 203, 0);
+    color: black;
+    font-family: 'Barlow', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px black solid;
+    user-select: none;
+    box-shadow: 0px 5px 2px black;
+}
+
+.fuel-selector:hover {
+    background-color: rgb(246, 255, 0);
+}
+
+@keyframes slideUpAndDown {
+    0%, 100% {
+        transform: translateY(0px);
+        box-shadow: 0px 5px 2px black;
+    }
+
+    50% {
+        transform: translateY(5px);
+        box-shadow: 0px 0px 0px black;
+    }
+
+    60% {
+        transform: translateY(5px);
+        box-shadow: 0px 0px 0px black;
+    }
+}
+
+#stats {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    user-select: none;
+    cursor: pointer;
+}
+
+#settings {
+    position: fixed;
+    top: 15px;
+    left: 50px;
+    user-select: none;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+.fuel-selector-screen {
+    width: 95%;
+    height: 40px;
+    background-image: linear-gradient(rgb(89, 105, 65), rgb(83, 127, 83));
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'digital-7_italicitalic';
+    font-size: 35px;
+}
+
+#settings-container {
+    width: 0px; /*to 500px*/
+    height: 0px; /*to 375px*/
+    background-color: white;
+    border-radius: 20px;
+    border: 3px black solid;
+    color: black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: settingsExpand 0.75s ease forwards;
+}
+
+@keyframes settingsExpand {
+    from {
+        width: 0px;
+        height: 0px;
+    }
+
+    to {
+        width: 500px;
+        height: 375px;
+    }
+}
+
+@keyframes settingsShrink {
+    from {
+        width: 500px;
+        height: 375px;
+    }
+
+    to {
+        width: 0px;
+        height: 0px;
+    }
+}
+
+#settings-opacity-contaioner {
+    opacity: 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#settings-screen {
+    background-image: linear-gradient(rgb(89, 105, 65), rgb(83, 127, 83));
+    width: 35%;
+    height: 40px;
+    font-size: 39px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-family: 'digital-7_italicitalic';
+}
+
+#settings-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.setting-input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.setting-input {
+    width: 100px;
+    height: 30px;
+    background-image: linear-gradient(rgb(89, 105, 65), rgb(83, 127, 83));
+    font-family: 'digital-7_italicitalic';
+    font-size: 29px;
+}
+
+.small {
+    width: 60px !important;
+    height: 20px !important;
+    font-size: 19px !important;
+}
+
+.setting-input-container p:hover {
+    cursor: help;
+    text-decoration: underline;
+}
+
+input[type=radio] {
+    cursor: pointer;
+}
+
+label {
+    user-select: none;
+    cursor: pointer;
 }

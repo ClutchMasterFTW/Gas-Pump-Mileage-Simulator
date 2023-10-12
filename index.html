@@ -5,34 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mileage Simulator</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <p class="subtext">This Sale</p>
-    <div id="container">
-        <h1>$</h1>
-        <div id="screen">
-            <p id="cost">0.00</p>
-            <p id="fuel">0.000</p>
+    <div id="fuel-selectors"></div>
+    <div id="main-container">
+        <p class="subtext">This Sale</p>
+        <div id="container">
+            <h1 id="dollar-sign">$</h1>
+            <div id="screen">
+                <p id="cost">0.00</p>
+                <p id="fuel">0.000</p>
+            </div>
+        </div>
+        <p class="subtext">Gallons</p>
+
+        <div id="button-container">
+            <button id="toggle"><span class="material-icons">local_gas_station</span>Press to toggle</button>
+            <button id="hold"><span class="material-icons">pan_tool_alt</span>Hold to pump</button>
+            <button id="siphon"><span class="material-icons">pan_tool_alt</span>Hold to siphon</button>
+        </div>
+
+        <br></br>
+        <p class="subsubtext">Range</p>
+        <p id="miles">0.00mi</p>
+        <div id="tank-main-container">
+            <div id="tank-container">
+                <div id="tank-visual"></div>
+                <div id="tank-value"></div>
+                <div id="tank-alert"></div>
+            </div>
         </div>
     </div>
-    <p class="subtext">Gallons</p>
-
-    <div id="button-container">
-        <button id="toggle">Press to toggle</button>
-        <button id="hold">Hold to pump</button>
-    </div>
-
-    <br></br>
-    <p class="subsubtext">Range</p>
-    <p id="miles">0.00mi</p>
-    <div style="width: 40%; height: 50px;">
-        <div id="tank-container">
-            <div id="tank-visual"></div>
-            <div id="tank-value"></div>
-        </div>
-    </div>
+    <span class="material-icons" id="stats" onclick="stats()" title="Stats">query_stats</span>
+    <span class="material-icons" id="settings" onclick="settings()" title="Settings">settings</span>
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
 </html>
+
+<!--
+    Ideas:
+    - Need to fix when tank reaches full capacity, the alert doesn't show.
+    - sounds (click when tank is full, set what tank is currently)
+    - settings tab
+    - add siphoning
+-->
