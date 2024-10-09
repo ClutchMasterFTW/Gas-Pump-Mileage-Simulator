@@ -387,3 +387,26 @@ label {
     user-select: none;
     cursor: pointer;
 }
+
+#stats-container {
+    position: fixed;
+    top: 50%;
+    left: 0%;
+    transform: translate(-300px, -50%);
+    background-color: white;
+    width: 300px;
+    height: 97.5%;
+    border: 3px black solid;
+    border-radius: 25px;
+    animation: moveInFromLeft 1s 0s ease forwards;
+}
+
+@keyframes moveInFromLeft {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: 315px;
+    }
+}
